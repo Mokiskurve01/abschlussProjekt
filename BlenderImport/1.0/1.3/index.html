@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Babylon Template</title>
+
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 5;
+                text-align: center;
+                font-size: 200%;
+                background-image: url('background.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+                color: blue;
+            }
+
+            #renderCanvas {  
+                padding-right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 70%;
+            }
+        </style>
+
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
+
+   <body>
+
+    <h1 align: center>Hello Web Konfigurator</h1>
+    
+    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+
+    <script>
+        const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+        const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+
+        var createScene = function () {
+
+            // This creates a basic Babylon Scene object (non-mesh)
+            var scene = new BABYLON.Scene(engine);
+
+            // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
+            var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+
+            // Move the sphere upward 1/2 its height
+            sphere.position.y = 1;
+
+            // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
+            var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+
+            scene.createDefaultCameraOrLight(true, true, true);
+
+            // var imgX = 600;
+            // var imgY = 457;
+            // var canvasX = engine.getRenderWidth();
+            // var canvasY = engine.getRenderHeight();
+            // var imgAR = imgX/imgY;
+            // var canvasAR = canvasX/canvasY;
+            // var scaleX, scaleY, offsetY;
+
+            var layer = new BABYLON.Layer('','https://i.imgur.com/mBBxGJH.jpg', scene, true);
+
+            // if (canvasX < canvasY) {
+            //     scaleX = 1
+            //     scaleY = canvasY / (canvasX / imgX * imgY);
+            //     offsetY = ((canvasY - imgY) / 2) / canvasY;
+            // }
+
+            // layer.texture.vOffset = offsetY;
+            // layer.texture.vScale = scaleY;
+
+            // window.addEventListener('resize', () => {
+            //     if (canvasX < canvasY) {
+            //         scaleX = 1
+            //         scaleY = imgY / canvasY * canvasX;
+            //         offsetY = ((canvasY - imgY) / 2) / canvasY;
+            //     }
+
+            //     layer.vOffset = offsetY;
+            //     layer.vScale = scaleY;
+
+            //     console.log('offsetY', offsetY);
+            //     console.log('scaleY', scaleY);
+            // })
+
+            // console.log('offsetY', offsetY);
+            // console.log('scaleY', scaleY);
+
+
+        return scene;
+};
+
+        const scene = createScene(); //Call the createScene function
+
+        // Register a render loop to repeatedly render the scene
+        engine.runRenderLoop(function () {
+                scene.render();
+        });
+
+        // Watch for browser/canvas resize events
+        window.addEventListener("resize", function () {
+                engine.resize();
+        });
+    </script>
+
+   </body>
+
+</html>
+
+
+

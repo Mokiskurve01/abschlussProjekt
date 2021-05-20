@@ -1,4 +1,3 @@
-// <reference path='./babylon.d.ts' />
 
 // get our canvas(konstante Leinwand)
 const canvas = document.getElementById('renderCanvas');
