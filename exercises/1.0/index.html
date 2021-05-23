@@ -74,26 +74,26 @@
                 var mat0 = new BABYLON.StandardMaterial("mat0", scene);
 	            mat0.bumpTexture = new BABYLON.Texture("/exercises/1.0/assets/images/crateTex1.jpg", scene);
 
-                var mat1 = new BABYLON.StandardMaterial("mat0", scene);
+                var mat1 = new BABYLON.StandardMaterial("mat1", scene);
 	            mat1.bumpTexture = new BABYLON.Texture("/exercises/1.0/assets/images/wood.jpg", scene);
 	
 
-                var mat2 = new BABYLON.StandardMaterial("mat0", scene);
+                var mat2 = new BABYLON.StandardMaterial("mat2", scene);
 	            mat1.bumpTexture = new BABYLON.Texture("/exercises/1.0/assets/images/WieseHorizont1.png", scene);
 	
-	//colour and bump
-    result.meshes[0].material = mat0;
+                //colour and bump
+                result.meshes[0].material = mat0;
 
-	//original image and bump
-	result.meshes[1].material = mat1;
-	
-	//other image and bump
-	result.meshes[2].material = mat2;
+                //original image and bump
+                result.meshes[1].material = mat1;
+                
+                //other image and bump
+                result.meshes[2].material = mat2;
 				   
             
         
                 return scene;
-    });
+            });
 
 
         
