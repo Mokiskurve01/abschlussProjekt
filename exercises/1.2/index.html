@@ -2,8 +2,8 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="user-scale=0, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="https://cdn.babylonjs.com/babylon.js"></script>
         <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
@@ -22,27 +22,34 @@
            <section class="auswahl-menu">
 
         <h2>Material Auswahl</h2>
-
-            <p>Waehlen Sie aus den vorhandenen Materialein aus</p>
-
-            <form action="/action_page.php">
-                <label for="Material">Waehlen sie aus:</label>
-                    <select id="Material" name="cars">
-                        <option value="gold">Gold</option>
-                        <option value="silber">Silber</option>
-                        <option value="bronze">Bronze</option>
-                        <option value="rosegold">Rosegold</option>
+           
+                <label for="Material">Auswahl Stoffueberzug:</label>
+                    <select name="selectMaterial" onchange=changeStoffueberzug()  id="stoffueberzug">
+                        <option value="candy">Candy</option>
+                        <option value="dirndel">Dirndel</option>
+                        <option value="holz">Holz</option>
+                        <option value="kork">Kork</option>
+                        <option value="okt">Okt</option>
+                        <option value="ozelot">Ozelot</option>
+                        <option value="rinde">Rinde</option>
                     </select>
-                <input type="submit">
-            </form>
 
-    </section>
+                    <label for="Material">Auswahl Polsterung:</label>
+                    <select name="selectMaterial" onchange=changePolsterung()  id="polsterung">
+                        <option value="rot">Rot</option>
+                        <option value="weiss">Weiss</option>
+                        
+                    </select>
 
-
-
-        
- 
-        
+                    <label for="Material">Auswahl Metallteile:</label>
+                    <select name="selectMaterial" onchange=changeMetallteile()  id="metallteile">
+                        <option value="bronze">Bronze</option>
+                        <option value="gold">Gold</option>
+                        <option value="rosegold">Rosegold</option>
+                        <option value="silber">Silber</option>
+                        
+                    </select>
+        </section>        
     </body>
 </html>
 
