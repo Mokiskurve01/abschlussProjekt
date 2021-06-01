@@ -233,7 +233,7 @@
 
         //var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
         // gesamtAuswahl
-        var title = gesamtAuswahl.length;
+        var title = gesamtAuswahl.;
 
 
         var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
