@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pferdehalfter Konfigurator</title>
+    <meta name="description" content="Erstellen Sie sich Ihr eigenes Pferdehalfter nach Ihrem wunsch">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+    <script language="javascript" type="text/javascript" src="store.js"></script>
+
+   
+</head>
+
+<body>
+
+    <canvas id="renderCanvas" touch-action="none"></canvas>
+
+        <h2>Material Auswahl</h2>
+
+        <label for="Material">Stoffueberzug:</label>
+        <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
+            <option disabled selected value> -- AUSWAHL -- </option>
+            <option value="Candy">Candy</option>
+            <option value="Dirndel">Dirndel</option>
+            <option value="Holz">Holz</option>
+            <option value="Kork">Kork</option>
+            <option value="Okt">Okt</option>
+            <option value="Ozelot">Ozelot</option>
+            <option value="Rinde">Rinde</option>
+            <option value="Jeans">Jeans</option>
+            <option value="Rosa">Rosa</option>
+
+        </select>
+
+        <label for="Material">Polsterung:</label>
+        <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
+            <option disabled selected value> -- AUSWAHL -- </option>
+            <option value="Rot">Rot</option>
+            <option value="Weiss">Weiss</option>
+            <option value="Beige">Beige</option>
+
+        </select>
+
+        <label for="Material">Metallteile:</label>
+        <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
+            <option disabled selected value> -- AUSWAHL -- </option>
+            <option value="Bronze">Bronze</option>
+            <option value="Gold">Gold</option>
+            <option value="Rosegold">Rosegold</option>
+            <option value="Silber">Silber</option>
+        </select>
+
+        
+        <section class="container content-section">         
+                        <span class="artikel-preis">€12.34</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>  
+        </section>
+
+        <section class="container content-section">
+            <h2 class="section-header">Warenkorb</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">AUSWAHL</span>
+                <span class="cart-price cart-header cart-column">PREIS</span>
+                <span class="cart-quantity cart-header cart-column">ANZAHL</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Gesamt</strong>
+                <span class="cart-total-price">€0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
+        </section>
+   
+</body>
+
+</html>
