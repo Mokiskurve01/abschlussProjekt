@@ -1,62 +1,89 @@
-@media sceen {
+/* ================================
 
-    /* border-box*/
+basis.css 
+
+- grundlegende Einstellungen 
+- grundlegende Textgestaltung 
+- Elementselektoren 
+
+================================ */ 
+
+@media screen {
+  
+    /**
+      * Grundlegende Einstellungen   
+      */ 
+    
+    /* border-box */ 
     html {
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
-
-    *,
-    *:before,
-    *:after {
-        box-sizing: inherit;
+    *, *:before, *:after {
+      box-sizing: inherit;
     }
-
-    /* Vermeidung von "collapsing amrgins" */
-    h1,h2,h3,h4,h5,h6,
-    p,ul,ol,blockquote {
-        margin-top: 0;
-        margin-bottom: 1em;
+  
+    /* Vermeidung von "collapsing margins" */ 
+    h1, h2, h3, h4, h5, h6,
+    p, ul, ol, blockquote {
+      margin-top: 0;
+      margin-bottom: 1em;
     }
-
-    /* Element visuell versteckten, aber für Screenreader zugäglich lassen*/
+  
+    /* Elemente visuell verstecken, aber für Screenreader zugänglich lassen */ 
     .visually-hidden {
-        position: absolute;
-
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        border: 0;
-        margin: -1px;
-
-        clip: rect(0 0 0 0);
-        overflow: hidden;
-        white-space: nowrap;
+      position: absolute;
+  
+      width: 1px; 
+      height: 1px;
+      padding: 0;
+      border: 0;
+      margin: -1px; 
+  
+      clip: rect(0 0 0 0); 
+      overflow: hidden;
+      white-space: nowrap; 
     }
-
+  
+    
+    /**
+      * Grundlegende Textgestaltung  
+      * Elementselektoren 
+      */ 
+    
     body {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 1rem;
+      /* Variante 1: Einfach nur eine Schriftart ohne Serifen */
+      /* font-family: sans-serif; */
+  
+      /* Variante 2: Schriftarten wünschen */
+      /* font-family: Helvetica, Arial, sans-serif; */ 
+  
+      /* Variante 3: Webfonts - Schriftart mitliefern (geladen per @import in style.css) */
+      font-family: 'Source Sans Pro', Arial, sans-serif; 
+  
+      /* Schriftgröße explizit festlegen */ 
+      font-size: 1rem; 
     }
-
-    /*h1 {font-size: 2.5rem;} ist eine .svg*/
-    h2 {font-size: 2rem;}
-
-    h3 {font-size: 1.75rem;}
-
-    h4 {font-size: 1.5rem;}
-
-    /*Gestaltung Kontaktdaten und Kontaktformular*/
+  
+    /* Schriftgrößen für Überschriften */
+    h1 { font-size: 2.5rem; } 
+    h2 { font-size: 2rem; } 
+    h3 { font-size: 1.75rem; } 
+    h4 { font-size: 1.5rem; } 
+    /* h5 und h6 bei Bedarf nachtragen */ 
+  
+  
+    /* Grundlegende Gestaltung Kontaktdaten und Kontaktformular */ 
     address {
-        font-style: normal;
+      font-style: normal; 
     }
-
+    
     label {
-        display: block;
+      display: block; 
     }
-
+    
     form div {
-        margin-bottom: 1em;
+      margin-bottom: 1em; 
     }
-}
-
-/* Ende @media*/
+  
+      
+  } /* Ende @media */

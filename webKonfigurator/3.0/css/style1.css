@@ -1,0 +1,134 @@
+/*verwendung von web-Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* border-box vererbung an alle box-elemente*/
+html {
+	box-sizing: border-box;
+}
+*, *::before*:after {
+	box-sizing: inherit;
+}
+
+/* Elemente im visuellen Layout versteckt, aber für Screenreader vorhanden */ 
+.visually-hidden {
+	position: absolute;
+
+	width: 1px; 
+	height: 1px;
+	padding: 0;
+	border: 0;
+	margin: -1px; 
+
+	clip: rect(0 0 0 0); 
+	overflow: hidden;
+	white-space: nowrap; 
+}
+
+body {
+	font-family: 'Source Sans Pro', Arial, sans-serif;
+	background-color: wheat;
+	font-size: 1rem;
+}
+
+h1 {
+	font-size: 2.5rem;
+	padding: 8px;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+.site-footer {
+	font-size: smaller;
+}
+
+.site-content {
+	line-height: 1.5;
+}
+
+/*unbesuchte links*/
+.site-content a:link,
+.site-content a:hover,
+.site-content a:focus {
+	color: rgb(170, 89, 14)
+}
+
+/*besuchtelinks*/
+
+/*wenn die maus drüberfährt*/
+
+/*moment des klicks*/
+.site-content a:active {
+	color: #d90000
+}
+
+/*Gestaltung der Kundenstimmen mit Box-Modell-Eigenschaften*/
+.kundenstimme {
+	background-color: #eee;
+	text-align: center;
+	padding: 1em;
+	margin: 0 0 1em 0;
+	border-left: 5px solid #a27624;
+}
+
+/*Provisorische Gestaltung der Navigation und der Fußzeile*/
+.site-nav-list,
+.site-footer {
+	background-color: #333;
+	padding: 0.5em;
+}
+
+.site-nav-list li {
+	display: inline;
+	margin-right: 1em;
+}
+
+.site-nav-list a,
+.site-footer a {
+	color: white;
+	text-decoration: none;
+}
+
+/*Provisorische Gestaltung der Infoboxen*/
+.infoboxen {
+	background-color: #eee;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.infobox {
+	text-align: center;
+	background-color: white;
+	padding: 1em;
+	margin: 1em;
+}
+
+
+
+/*Gestaltung der Navigation*/
+a.sie-sind-hier {
+	text-decoration: underline;
+}
+
+/*Gestaltung Kontaktdaten und Kontaktformular*/
+address {
+	font-style: normal;
+}
+
+label {
+	display: block;
+
+}
+
+form div {
+	margin-bottom: 1em;
+}

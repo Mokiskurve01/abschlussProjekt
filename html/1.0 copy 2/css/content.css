@@ -1,0 +1,45 @@
+@media sceen {
+
+    /*Hyperlink im Inhaltbereich gestalten*/
+    .site-content a:link {
+        color: #0b74b8;
+    }
+
+    .site-content a:visited {
+        color: #36aade;
+    }
+
+    .site-content a:hover,
+    .site-content a:focus {
+        color: #f5662e;
+    }
+
+    .site-content a:active {
+        color: #d90000;
+    }
+
+    /*Gestaltung der Infoboxen*/
+    .infoboxen {
+        background-color: #eee;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    .infobox {
+        text-align: center;
+        background-color: white;
+        padding: 1em;
+        margin: 1em;
+    }
+
+    /*Gestaltung der Kundenstimmen mit Box-Modell-Eigenschaften*/
+    .kundenstimme {
+        background-color: #eee;
+        text-align: center;
+        padding: 1em;
+        margin: 0 0 1em 0;
+        border-left: 5px solid #0b74b8;
+    }
+}
+
+/* Ende @media*/

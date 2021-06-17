@@ -14,74 +14,93 @@
 
     <link rel="stylesheet" href="style.css">
 
-    
+
     <script language="javascript" type="text/javascript" src="main.js"></script>
     <script language="javascript" type="text/javascript" src="store.js"></script>
 
-   
+
 </head>
 
 <body>
 
-    <canvas id="renderCanvas" touch-action="none"></canvas>
+    <h1><img src="assets\images\logo\logo-horsenate-720-100.svg"  
+             alt="Horsenate" 
+             width="720" 
+             height="100"></h1>
 
-        <h2>Material Auswahl</h2>
+    <div class="flex-container">
+        <div style="flex-grow: 1">
+            <div>
+                <h2>Material Auswahl</h2>
 
-        <label for="Material">Stoffueberzug:</label>
-        <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
-            <option disabled selected value> -- AUSWAHL -- </option>
-            <option value="Candy">Candy</option>
-            <option value="Dirndel">Dirndel</option>
-            <option value="Holz">Holz</option>
-            <option value="Kork">Kork</option>
-            <option value="Okt">Okt</option>
-            <option value="Ozelot">Ozelot</option>
-            <option value="Rinde">Rinde</option>
-            <option value="Jeans">Jeans</option>
-            <option value="Rosa">Rosa</option>
+                <label for="Material">Stoffueberzug:</label>
+                <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
+                    <option disabled selected value> -- AUSWAHL -- </option>
+                    <option value="Candy">Candy</option>
+                    <option value="Dirndel">Dirndel</option>
+                    <option value="Holz">Holz</option>
+                    <option value="Kork">Kork</option>
+                    <option value="Okt">Okt</option>
+                    <option value="Ozelot">Ozelot</option>
+                    <option value="Rinde">Rinde</option>
+                    <option value="Jeans">Jeans</option>
+                    <option value="Rosa">Rosa</option>
 
-        </select>
+                </select>
 
-        <label for="Material">Polsterung:</label>
-        <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
-            <option disabled selected value> -- AUSWAHL -- </option>
-            <option value="Rot">Rot</option>
-            <option value="Weiss">Weiss</option>
-            <option value="Beige">Beige</option>
+                <label for="Material">Polsterung:</label>
+                <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
+                    <option disabled selected value> -- AUSWAHL -- </option>
+                    <option value="Rot">Rot</option>
+                    <option value="Weiss">Weiss</option>
+                    <option value="Beige">Beige</option>
 
-        </select>
+                </select>
 
-        <label for="Material">Metallteile:</label>
-        <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
-            <option disabled selected value> -- AUSWAHL -- </option>
-            <option value="Bronze">Bronze</option>
-            <option value="Gold">Gold</option>
-            <option value="Rosegold">Rosegold</option>
-            <option value="Silber">Silber</option>
-        </select>
+                <label for="Material">Metallteile:</label>
+                <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
+                    <option disabled selected value> -- AUSWAHL -- </option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Rosegold">Rosegold</option>
+                    <option value="Silber">Silber</option>
+                </select>
 
-        
-        <section class="container content-section">         
-                        <span class="artikel-preis">€12.34</span>
-                        <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>  
-        </section>
-
-        <section class="container content-section">
-            <h2 class="section-header">Warenkorb</h2>
-            <div class="cart-row">
-                <span class="cart-item cart-header cart-column">AUSWAHL</span>
-                <span class="cart-price cart-header cart-column">PREIS</span>
-                <span class="cart-quantity cart-header cart-column">ANZAHL</span>
+                <section class="container content-section">
+                    <span class="artikel-preis">€12.34</span>
+                    <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>
+                </section>
             </div>
-            <div class="cart-items">
+        </div>
+
+        <div style="flex-grow: 10">
+            <div>
+                <canvas id="renderCanvas" touch-action="none"></canvas>
             </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Gesamt</strong>
-                <span class="cart-total-price">€0</span>
+        </div>
+
+        <div style="flex-grow: 1">
+            <div>
+                
+
+                <section class="container content-section">
+                    <h2 class="section-header">Warenkorb</h2>
+                    <div class="cart-row">
+                        <span class="cart-item cart-header cart-column">AUSWAHL</span>
+                        <span class="cart-price cart-header cart-column">PREIS</span>
+                        <span class="cart-quantity cart-header cart-column">ANZAHL</span>
+                    </div>
+                    <div class="cart-items">
+                    </div>
+                    <div class="cart-total">
+                        <strong class="cart-total-title">Gesamt</strong>
+                        <span class="cart-total-price">€0</span>
+                    </div>
+                    <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
+                </section>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
-        </section>
-   
+        </div>
+    </div>
 </body>
 
 </html>
