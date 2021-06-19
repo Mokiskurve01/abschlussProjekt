@@ -1,0 +1,131 @@
+Exporter version: 2.80.1, Blender version: 2.92.0
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		Inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		Keep Z-up r-handed  :  no
+		Texture directory   :  C:\Users\DCV\Documents\AbschlussProjekt\exercises\1.2\assets\models\
+	Python World class constructor completed
+	processing begun of mesh:  Kreis
+		WARNING: No materials have been assigned: 
+		num positions      :  0
+		num normals        :  0
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  0
+	WARNING: mesh, Kreis, has 0 vertices; ignored
+	processing begun of mesh:  Würfel.003
+		WARNING: No materials have been assigned: 
+		num positions      :  454
+		num normals        :  454
+		num tangents       :  0
+		num uvs            :  908
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  188
+		WARNING: # of 0 area faces found:  16
+	processing begun of mesh:  T-Stueck.002
+		WARNING: No materials have been assigned: 
+		num positions      :  54134
+		num normals        :  54134
+		num tangents       :  0
+		num uvs            :  108268
+		num uvs2           :  108268
+		num colors         :  0
+		num triangles      :  21304
+	processing begun of mesh:  Würfel
+		WARNING: No materials have been assigned: 
+		num positions      :  1047
+		num normals        :  1047
+		num tangents       :  0
+		num uvs            :  2094
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  456
+		WARNING: # of 0 area faces found:  8
+	processing begun of mesh:  T-Stueck.001
+		WARNING: No materials have been assigned: 
+		num positions      :  54134
+		num normals        :  54134
+		num tangents       :  0
+		num uvs            :  108268
+		num uvs2           :  108268
+		num colors         :  0
+		num triangles      :  21304
+	processing begun of mesh:  Fläche
+		WARNING: No materials have been assigned: 
+		num positions      :  6843
+		num normals        :  6843
+		num tangents       :  0
+		num uvs            :  13686
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2640
+	WARNING: The following camera not visible in scene thus ignored: Camera
+	processing begun of mesh:  Ring.001
+		WARNING: No materials have been assigned: 
+		num positions      :  1011
+		num normals        :  1011
+		num tangents       :  0
+		num uvs            :  2022
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1536
+	processing begun of mesh:  RingHaus
+		WARNING: No materials have been assigned: 
+		num positions      :  1027
+		num normals        :  1027
+		num tangents       :  0
+		num uvs            :  2054
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1536
+	processing begun of mesh:  T-Stueck.003
+		WARNING: No materials have been assigned: 
+		num positions      :  108190
+		num normals        :  108190
+		num tangents       :  0
+		num uvs            :  216380
+		num uvs2           :  216380
+		num colors         :  0
+		num triangles      :  42608
+	processing begun of mesh:  Ring.002
+		WARNING: No materials have been assigned: 
+		num positions      :  507
+		num normals        :  507
+		num tangents       :  0
+		num uvs            :  1014
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  768
+	processing begun of mesh:  path27
+		WARNING: No materials have been assigned: 
+		num positions      :  0
+		num normals        :  0
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  0
+	WARNING: mesh, path27, has 0 vertices; ignored
+	processing begun of light (POINT):  Light
+========= Writing of JSON file started =========
+	writing mesh:  Würfel.003
+	writing mesh:  T-Stueck.002
+	writing mesh:  Würfel
+	writing mesh:  T-Stueck.001
+	writing mesh:  Fläche
+	writing mesh:  Ring.001
+	writing mesh:  RingHaus
+	writing mesh:  T-Stueck.003
+	writing mesh:  Ring.002
+========= Writing of JSON file completed =========
+========= end of processing =========
+elapsed time:  0 min, 15.8639 secs

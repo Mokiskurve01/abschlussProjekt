@@ -1,113 +1,106 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="user-scale=0, initial-scale=1.0">
 
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
-        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-
-            <link rel="stylesheet" href="style.css">
-            <script language="javascript" type="text/javascript" src="main.js"></script>
-
-        <title>Web konfigurator</title>
-    </head>
-    <body>
-        <h1>Hello Web Konfigurator</h1>
-       
-         <canvas id="renderCanvas" touch-action="none"></canvas>
-
-         <script>
-            const canvas = document.getElementById("renderCanvas"); // Get the canvas element
-            const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-    
-            // Add your code here matching the playground format
-            const createScene = function () {
-        
-                const scene = new BABYLON.Scene(engine);  
-                
-                    //Load models
-                    BABYLON.SceneLoader.ImportMeshAsync("", "./", "solidToTest.babylon")
-                    .then(function (result) {
-
-                        //Zoom to adjust
-                        scene.activeCamera.lowerRadiusLimit = 2;
-                        scene.activeCamera.upperRadiusLimit = 20;
-                        scene.activeCamera.useBouncingBehavior = true;
-
-                        //Color to solid
-                        const mat1 = new BABYLON.StandardMaterial('mat1', scene);
-                        mat1.diffuseColor = new BABYLON.Color3(1, 0, 0);
-                        result.meshes[0].material = mat1;
-                        
-                        const material1 = new BABYLON.StandardMaterial('material1', scene);
-                        material1.diffuseColor = new BABYLON.Color3(0, 0, 1);
-                        result.meshes[1].material = material1;
-
-                        //Texture to solid
-                        const material2 = new BABYLON.StandardMaterial("material2", scene);
-                        material2.diffuseTexture = new BABYLON.Texture("assets/images/gold.jpg", scene);
-                        result.meshes[2].material = material2;
-                        
+<head>
+    <meta charset="UTF-8">
+    <title>Pferdehalfter Konfigurator</title>
+    <meta name="description" content="Erstellen Sie sich Ihr eigenes Pferdehalfter nach Ihrem wunsch">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
 
-                    return scene;
-                    });
-                
-                const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
-                camera.attachControl(canvas, true);
-                const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
-    
-            return scene;
-            };
-    
-            const scene = createScene(); //Call the createScene function
-    
-            // Register a render loop to repeatedly render the scene
-            engine.runRenderLoop(function () {
-                    scene.render();
-            });
-    
-            // Watch for browser/canvas resize events
-            window.addEventListener("resize", function () {
-                    engine.resize();
-            });
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 
-        </script>   
+    <link rel="stylesheet" href="style.css">
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    
-        document.Testform.Pizza.addEventListener('change', CheckAuswahl);
-     
-        function CheckAuswahl () {
-            var menu = document.Testform.Pizza;
-            document.querySelector('output').innerHTML = menu.options[menu.selectedIndex].value;		
-        }
-    
-    });
-    </script>
-    
-   
 
-        <form name="Auswahl">
-            <label>Bitte wählen Sie Ihr Material:
-                <select name="Material" size="4">
-                <option value="Gold">Gold</option>
-                <option value="Silber">Silber</option>
-                <option value="Bronze">Bronze</option>
-                <option value="Rose Gold">Rose Gold</option>
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+    <script language="javascript" type="text/javascript" src="store.js"></script>
+
+
+</head>
+
+<body>
+
+    <h1><img src="assets\images\logo\logo-horsenate-720-100.svg"  
+             alt="Horsenate" 
+             width="720" 
+             height="100"></h1>
+
+    <div class="flex-container">
+        <div style="flex-grow: 1">
+            <div>
+                <h2>Material Auswahl</h2>
+
+                <label for="Material">Stoffueberzug:</label>
+                <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
+                    <option disabled selected value> -- AUSWAHL -- </option>
+                    <option value="Candy">Candy</option>
+                    <option value="Dirndel">Dirndel</option>
+                    <option value="Holz">Holz</option>
+                    <option value="Kork">Kork</option>
+                    <option value="Okt">Okt</option>
+                    <option value="Ozelot">Ozelot</option>
+                    <option value="Rinde">Rinde</option>
+                    <option value="Jeans">Jeans</option>
+                    <option value="Rosa">Rosa</option>
+
                 </select>
-            </label>
-        </form>
- 
-        
 
+                <label for="Material">Polsterung:</label>
+                <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
+                    <option disabled selected value> -- AUSWAHL -- </option>
+                    <option value="Rot">Rot</option>
+                    <option value="Weiss">Weiss</option>
+                    <option value="Beige">Beige</option>
 
-    </body>
+                </select>
+
+                <label for="Material">Metallteile:</label>
+                <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
+                    <option disabled selected value> -- AUSWAHL -- </option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Rosegold">Rosegold</option>
+                    <option value="Silber">Silber</option>
+                </select>
+
+                <section class="container content-section">
+                    <span class="artikel-preis">€12.34</span>
+                    <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>
+                </section>
+            </div>
+        </div>
+
+        <div style="flex-grow: 10">
+            <div>
+                <canvas id="renderCanvas" touch-action="none"></canvas>
+            </div>
+        </div>
+
+        <div style="flex-grow: 1">
+            <div>
+                
+
+                <section class="container content-section">
+                    <h2 class="section-header">Warenkorb</h2>
+                    <div class="cart-row">
+                        <span class="cart-item cart-header cart-column">AUSWAHL</span>
+                        <span class="cart-price cart-header cart-column">PREIS</span>
+                        <span class="cart-quantity cart-header cart-column">ANZAHL</span>
+                    </div>
+                    <div class="cart-items">
+                    </div>
+                    <div class="cart-total">
+                        <strong class="cart-total-title">Gesamt</strong>
+                        <span class="cart-total-price">€0</span>
+                    </div>
+                    <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
-
-
-
