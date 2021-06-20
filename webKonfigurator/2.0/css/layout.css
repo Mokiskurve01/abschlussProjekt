@@ -37,30 +37,54 @@ IE11
     flex-flow: column;
   }
 
-  .grafikbox {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "content1 content2 content3" 
+    "content1 content2 content3" 
+    "content4 content2 content3" 
+    ". content2 .";
+    grid-gap: 0.2rem;
   }
 
-  label {
-    display: inline-block; width: 7em;
+  #content1 {
+    background-color: wheat;
+    grid-area: content1;
+    margin: auto;
+    padding: 1em;
+  }
+
+  #content2 {
+    grid-area: content2;
+    margin: 1em;
+    padding: 1em;
+  }
+
+  #content3 {
+    background-color: wheat;
+    grid-area: content3;
+    text-align: center;
+    margin: 1em;
+    border-style: dashed;
+    padding: 1em;
+  }
+
+  #content4 {
+    background-color: wheat;
+    grid-area: content4;
+    text-align: center;
+    margin: 1em;
+    border-style: groove;
+    padding: 1em;
   }
 
   #renderCanvas {
-    padding: 2rem;
+    width: 100%;
   }
-
-  .materialauswahl {
-    display: flex;
-    flex-flow: column;
-    padding: 1rem;
-    justify-content: center;
-  }
-
+   
   /* Schmales Layout für alte Browser */
   .wrapper {
     min-width: 320px;

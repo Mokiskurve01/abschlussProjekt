@@ -71,14 +71,9 @@
       </div>
     </section>
 
-    <section class="grafikbox">
-      <h2 class="visually-hidden">Vorschau Pferdehalfter</h2>
-      <canvas id="renderCanvas" touch-action="none"></canvas>
-    </section>
-
-    <section class="auswahlbox">
-      <h2 class="visually-hidden">Material Auswahl</h2>
-      <div class="materialauswahl">
+  
+    <div class="container">
+      <div id="content1">
         <label for="Material">Stoffueberzug:</label>
         <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
           <option disabled selected value> -- AUSWAHL -- </option>
@@ -110,27 +105,31 @@
           <option value="Silber">Silber</option>
         </select>
       </div>
-
-      <section class="container content-section">
-        <span class="artikel-preis">€12.34</span>
-        <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>
-      </section>
-
-      <section class="container content-section">
+      <div id="content2">
+        <canvas id="renderCanvas" touch-action="none"></canvas>
+      </div>
+      <div id="content3">
         <h2 class="section-header">Warenkorb</h2>
         <div class="cart-row">
-            <span class="cart-item cart-header cart-column">AUSWAHL</span>
-            <span class="cart-price cart-header cart-column">PREIS</span>
-            <span class="cart-quantity cart-header cart-column">ANZAHL</span>
+          <span class="cart-item cart-header cart-column"></span>
+          <span class="cart-price cart-header cart-column"></span>
+          <span class="cart-quantity cart-header cart-column"></span>
         </div>
         <div class="cart-items">
         </div>
         <div class="cart-total">
-            <strong class="cart-total-title">Gesamt</strong>
-            <span class="cart-total-price">€0</span>
+          <strong class="cart-total-title">Gesamt Preis</strong>
+          <span class="cart-total-price">€0</span>
         </div>
         <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
-    </section>
+      </div>
+      <div id="content4">
+        <p>Preis</p>
+        <span class="artikel-preis">€59,90</span>
+        <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>
+      </div>
+
+    </div>
 
     </section>
 
