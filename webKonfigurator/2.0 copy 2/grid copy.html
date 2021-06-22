@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <title>Startseite - Pferdehalfter Konfigurator</title>
+  <meta name="description"
+    content="Hier haben sie die möglichkeit Ihr eigenes Pferdehalfter mit verschiedenen Materialeien zu gestalten.">
+
+  <link href="css/style.css" rel="stylesheet">
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+  <script language="javascript" type="text/javascript" src="js/main.js"></script>
+  <script language="javascript" type="text/javascript" src="js/store.js"></script>
+
+  <!-- Font Awesome https://fontawesome.com/start -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+    integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+<style>
+
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.4fr 1.5fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "content1 content2 content2"
+      "content4 content2 content2"
+      "content3 content2 content2"
+      ". content2 content2";
+
+    grid-gap: 0.2rem;
+
+  }
+
+  #content1 {
+    background-color: wheat;
+    grid-area: content1;
+    margin: auto;
+    padding: 3em 0em 3em 2em;
+  }
+
+  #content2 {
+    grid-area: content2;
+  }
+
+  #content3 {
+    background-color: wheat;
+    grid-area: content3;
+    text-align: center;
+    margin: 0em 0em 0em 2em;
+    border-style: dashed;
+    padding: 1em;
+  }
+
+  #content4 {
+    background-color: wheat;
+    grid-area: content4;
+    text-align: center;
+    margin: 0em 0em 0em 2em;
+    border-style: groove;
+    padding: 1em;
+  }
+
+  #renderCanvas {
+    width: 100%;
+  }
+
+  .artikel-preis {
+    padding: 1em;
+    margin: 2em;
+  }
+</style>
+
+<body class="startseite">
+  <div class="container">
+    <div id="content1">
+      <label for="Material">Stoffueberzug:</label>
+      <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
+        <option disabled selected value> -- AUSWAHL -- </option>
+        <option value="Candy">Candy</option>
+        <option value="Dirndel">Dirndel</option>
+        <option value="Holz">Holz</option>
+        <option value="Kork">Kork</option>
+        <option value="Okt">Okt</option>
+        <option value="Ozelot">Ozelot</option>
+        <option value="Rinde">Rinde</option>
+        <option value="Jeans">Jeans</option>
+        <option value="Rosa">Rosa</option>
+      </select>
+
+      <label for="Material">Polsterung:</label>
+      <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
+        <option disabled selected value> -- AUSWAHL -- </option>
+        <option value="Rot">Rot</option>
+        <option value="Weiss">Weiss</option>
+        <option value="Beige">Beige</option>
+      </select>
+
+      <label for="Material">Metallteile:</label>
+      <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
+        <option disabled selected value> -- AUSWAHL -- </option>
+        <option value="Bronze">Bronze</option>
+        <option value="Gold">Gold</option>
+        <option value="Rosegold">Rosegold</option>
+        <option value="Silber">Silber</option>
+      </select>
+    </div>
+    <div id="content2">
+      <canvas id="renderCanvas" touch-action="none"></canvas>
+    </div>
+    <div id="content3">
+      <h2 class="section-header">Warenkorb</h2>
+      <div class="cart-row">
+        <span class="cart-item cart-header cart-column"></span>
+        <span class="cart-price cart-header cart-column"></span>
+        <span class="cart-quantity cart-header cart-column"></span>
+      </div>
+      <div class="cart-items">
+      </div>
+      <div class="cart-total">
+        <strong class="cart-total-title">Gesamt Preis</strong>
+        <span class="cart-total-price">€0</span>
+      </div>
+      <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
+    </div>
+    <div id="content4">
+      <p>Preis</p>
+      <span class="artikel-preis">€59,90</span>
+      <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>
