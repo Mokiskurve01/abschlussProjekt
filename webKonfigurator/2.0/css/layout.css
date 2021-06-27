@@ -34,41 +34,49 @@ IE11
     min-height: 100vh;
     display: flex;
     flex-flow: column;
+    color: #33334c;
   }
 
   .container {
+    margin: 1rem;
+    padding: 1rem;
     display: grid;
-    height: 100vh;
+    width: 100vw;
     grid-template-columns: 0.1fr 2fr 0.1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "auswahl-boxen model kauf-btn" 
-    "auswahl-boxen model content3" 
-    "auswahl-boxen model content3" 
-    "auswahl-boxen model content3";
+    grid-template-areas:
+      "auswahl-boxen model kauf-btn"
+      "auswahl-boxen model warenkorb"
+      "auswahl-boxen model warenkorb"
+      "auswahl-boxen model warenkorb";
     grid-gap: 0.2rem;
   }
+
   .container img {
-   border-radius: 5px ;
+    border-radius: 5px;
   }
 
   #auswahl-boxen {
     background-color: transparent;
+    color: #33334c;
     grid-area: auswahl-boxen;
     margin: 0;
     padding: 1em;
-    
+
   }
 
   #model {
     grid-area: model;
     margin: 1em;
     padding: 1em;
+    border: 5px solid #33334c;
+    border-spacing: 0;
+    border-radius: 10px;
   }
 
-  #content3 {
-    background-color: wheat;
-    grid-area: content3;
+  #warenkorb {
+    background-color: transparent;
+    grid-area: warenkorb;
     text-align: center;
     margin: 1em;
     border-style: dashed;
@@ -76,28 +84,28 @@ IE11
   }
 
   #kauf-btn {
-    border: 3px solid #e21010;
-      background: none;
-      padding: 10px 20px;
-      font-size: 35px;
-      font-family: "montserrat";
-      cursor: pointer;
-      margin: 10px;
-      transition: 0.8s;
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
+
+    background: none;
+    padding: 10px 20px;
+    font-size: 35px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
   }
+
   .btn1 {
-    color: #a27624;
+    color: #e21010;
     font-size: 35px;
   }
 
   .btn1:hover {
-    color: #fff;
+    color: black;
   }
-
-  
 
   .btn::before {
     content: "";
@@ -105,7 +113,7 @@ IE11
     left: 0;
     width: 100%;
     height: 0%;
-    background: red;
+    background: #a27624;
     z-index: -1;
     transition: 0.8s;
   }
@@ -119,10 +127,14 @@ IE11
     height: 180%;
   }
 
+  .karusell p {
+    font-size: 50px;
+  }
+
   #renderCanvas {
     width: 100%;
   }
-   
+
   /* Schmales Layout für alte Browser */
   .wrapper {
     min-width: 320px;
