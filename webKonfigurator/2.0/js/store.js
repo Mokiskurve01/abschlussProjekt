@@ -26,10 +26,28 @@ function ready() {
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
+
+function sendEmail(name, email, message) {
+    fetch('http://www.dognate.net/ajax-email.php',
+        {
+        method: 'POST',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: `name=${encodeURI(name)}&email=${encodeURI(email)}&message=${encodeURI(message)}`
+    })
+}
 //Kasse
 function purchaseClicked() {
-    alert('Danke für Ihren Auftrag')
     var cartItems = document.getElementsByClassName('cart-items')[0]
+    sendEmail('Alex', 'alex.moik@gmx.at', 'test nachricht')
+    alert('Danke für Ihren Auftrag')
+
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
@@ -57,7 +75,7 @@ function addToCartClicked(event) {
     let auswahlStoff = document.getElementById("stoffueberzug").value;
     let auswahlPolster = document.getElementById("polsterung").value;
     let auswahlMetall = document.getElementById("metallteile").value;
-    let title = auswahlStoff+" "+auswahlPolster+" "+auswahlMetall;
+    let title = auswahlStoff + " " + auswahlPolster + " " + auswahlMetall;
     var price = shopItem.getElementsByClassName('artikel-preis')[0].innerText
 
     addItemToCart(title, price)

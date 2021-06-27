@@ -35,7 +35,6 @@
         <img src="assets/logo/logo-horsenate-240-33.gif" srcset="assets/logo/logo-horsenate-480-67.gif 2x,
                       assets/logo/logo-horsenate-720-99.gif 3x" alt="Logo von Horsenate" width="100%" height="100%">
       </h1>
-
     </div>
   </header>
 
@@ -60,21 +59,8 @@
 
   <main class="site-content">
 
-    <section class="content-intro">
-      <div class="wrapper">
-
-        <h2>Gestalten Sie ihr eigenes Pferdehalfter</h2>
-
-        <p> Hier kommt noch ein Text zur erklärung <a href="https://dognate.net" target="_blank">meine Website</a>
-          für weitere Informationen. </p>
-
-      </div>
-    </section>
-
-  
-
     <div class="container">
-      <div id="content1">
+      <div id="auswahl-boxen">
         <label for="Material">Stoffueberzug:</label>
         <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
           <option disabled selected value> -- AUSWAHL -- </option>
@@ -88,6 +74,16 @@
           <option value="Jeans">Jeans</option>
           <option value="Rosa">Rosa</option>
         </select>
+        <a href="javascript:waehleStoffueberzug('Candy')"><img src="assets/images/stoffueberzug/candy.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Dirndel')"><img src="assets/images/stoffueberzug/dirndel.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Holz')"><img src="assets/images/stoffueberzug/holz.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Kork')"><img src="assets/images/stoffueberzug/kork.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Okt')"><img src="assets/images/stoffueberzug/okt.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Ozelot')"><img src="assets/images/stoffueberzug/ozelot.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Rinde')"><img src="assets/images/stoffueberzug/rinde.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Jeans')"><img src="assets/images/stoffueberzug/jeans.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleStoffueberzug('Rosa')"><img src="assets/images/stoffueberzug/rosa.jpg" width="40px" height="40px"></a>
+     
 
         <label for="Material">Polsterung:</label>
         <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
@@ -96,6 +92,9 @@
           <option value="Weiss">Weiss</option>
           <option value="Beige">Beige</option>
         </select>
+        <a href="javascript:waehlePolsterung('Rot')"><img src="assets/images/polsterung/rot.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehlePolsterung('Beige')"><img src="assets/images/polsterung/beige.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehlePolsterung('Weiss')"><img src="assets/images/polsterung/weiss.jpg" width="40px" height="40px"></a>
 
         <label for="Material">Metallteile:</label>
         <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
@@ -105,8 +104,13 @@
           <option value="Rosegold">Rosegold</option>
           <option value="Silber">Silber</option>
         </select>
+        <a href="javascript:waehleMetallteile('Bronze')"><img src="assets/images/metallteile/bronze.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehleMetallteile('Gold')"><img src="assets/images/metallteile/gold.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehlePolsterung('Rosegold')"><img src="assets/images/metallteile/rosegold.jpg" width="40px" height="40px"></a>
+        <a href="javascript:waehlePolsterung('Silber')"><img src="assets/images/metallteile/silber.jpg" width="40px" height="40px"></a>
+
       </div>
-      <div id="content2">
+      <div id="model">
         <canvas id="renderCanvas" touch-action="none"></canvas>
       </div>
       <div id="content3">
@@ -124,20 +128,20 @@
         </div>
         <button class="btn btn-primary btn-purchase" type="button">Zur Kasse</button>
       </div>
-      <div id="content4">
-        <p>Preis</p>
-        <span class="artikel-preis">€59,90</span>
-        <button class="btn btn-primary shop-item-button" type="button">Warenkorb hinzufügen</button>
+
+
+      <div id="kauf-btn">
+        <span class="artikel-preis">€70</span>
+        <button class="btn btn1 shop-item-button" type="button">Kaufen</button>
       </div>
     </div>
     </section>
-
 
     <section class="kundenstimmen">
       <div class="wrapper">
 
         <h2>Das sagen die Kunden</h2>
-        <p>Im folgenden eine kleine Auswahl von Kundenstimmen.</p>
+        <p>Besuchen Sie hier <a href="pferdeKarusell.html">unser Pfede Karusell</a>, beispiel Bilder</p>
 
         <blockquote class="kundenstimme">
 
@@ -159,6 +163,9 @@
         </blockquote>
       </div>
     </section>
+
+
+    
   </main>
 
   <footer class="site-footer">

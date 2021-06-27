@@ -89,8 +89,8 @@
     window.onload = reloadScene;
 
     //auswahl
-    function waehleStoffueberzug() {
-        const gewaehlterStoffueberzug = document.getElementById("stoffueberzug").value;
+    function waehleStoffueberzug(material) {
+        const gewaehlterStoffueberzug = material ?? document.getElementById("stoffueberzug").value;
         switch (gewaehlterStoffueberzug) {
             case "Candy":
                 stoffueberzug.material = candy;
@@ -122,8 +122,8 @@
         }
     }
 
-    function waehlePolsterung() {
-        const gewaehltePolsterung = document.getElementById("polsterung").value;
+    function waehlePolsterung(material) {
+        const gewaehltePolsterung = material ?? document.getElementById("polsterung").value;
         switch (gewaehltePolsterung) {
             case "Rot":
                 polsterung.material = rot;
@@ -137,8 +137,8 @@
         }
     }
 
-    function waehleMetallteile() {
-        const gewaehkteMetallteile = document.getElementById("metallteile").value;
+    function waehleMetallteile(material) {
+        const gewaehkteMetallteile = material ?? document.getElementById("metallteile").value;
         switch (gewaehkteMetallteile) {
             case "Bronze":
                 metallteile.material = bronze;

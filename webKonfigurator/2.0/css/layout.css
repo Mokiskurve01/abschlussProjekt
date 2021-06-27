@@ -29,9 +29,8 @@ IE11
     */
 
   body {
-    background: wheat;
+    background: linear-gradient(to bottom, #e7d5b2, #f1c572);
     margin: 0;
-
     min-height: 100vh;
     display: flex;
     flex-flow: column;
@@ -43,22 +42,26 @@ IE11
     grid-template-columns: 0.1fr 2fr 0.1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-    "content1 content2 content3" 
-    "content1 content2 content3" 
-    "content4 content2 content3" 
-    ". content2 .";
+    "auswahl-boxen model kauf-btn" 
+    "auswahl-boxen model content3" 
+    "auswahl-boxen model content3" 
+    "auswahl-boxen model content3";
     grid-gap: 0.2rem;
   }
-
-  #content1 {
-    background-color: wheat;
-    grid-area: content1;
-    margin: auto;
-    padding: 1em;
+  .container img {
+   border-radius: 5px ;
   }
 
-  #content2 {
-    grid-area: content2;
+  #auswahl-boxen {
+    background-color: transparent;
+    grid-area: auswahl-boxen;
+    margin: 0;
+    padding: 1em;
+    
+  }
+
+  #model {
+    grid-area: model;
     margin: 1em;
     padding: 1em;
   }
@@ -72,13 +75,48 @@ IE11
     padding: 1em;
   }
 
-  #content4 {
-    background-color: wheat;
-    grid-area: content4;
-    text-align: center;
-    margin: 1em;
-    border-style: groove;
-    padding: 1em;
+  #kauf-btn {
+    border: 3px solid #e21010;
+      background: none;
+      padding: 10px 20px;
+      font-size: 35px;
+      font-family: "montserrat";
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.8s;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+  }
+  .btn1 {
+    color: #a27624;
+    font-size: 35px;
+  }
+
+  .btn1:hover {
+    color: #fff;
+  }
+
+  
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: red;
+    z-index: -1;
+    transition: 0.8s;
+  }
+
+  .btn1::before {
+    top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+
+  .btn1:hover::before {
+    height: 180%;
   }
 
   #renderCanvas {
