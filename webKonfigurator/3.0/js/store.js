@@ -5,7 +5,7 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-    //entferne warenkorbartikel knopf
+    //warenkorbartikel löschen
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -27,7 +27,7 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-function sendEmail(name, email, message) {
+function sendEmail(name, email, adresse, land, message) {
     fetch('http://www.dognate.net/ajax-email.php',
         {
         method: 'POST',
@@ -39,19 +39,30 @@ function sendEmail(name, email, message) {
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: `name=${encodeURI(name)}&email=${encodeURI(email)}&message=${encodeURI(message)}`
+        //body: `name=${encodeURI(name)}&email=${encodeURI(email)}&adresse=${encodeURI(adresse)}&land=${encodeURI(land)}&message=${encodeURI(message)}`
+        body: 'hallo dies ist ein test'
     })
 }
 //Kasse
 function purchaseClicked() {
+    const name = document.getElementById('kontakt-Name').value;
+    const email = document.getElementById('kontakt-Email').value;
+    const adresse = document.getElementById('kontakt-Adresse').value;
+    const land = document.getElementById('kontakt-Land').value;
+    
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    sendEmail('Alex', 'alex.moik@gmx.at', 'test nachricht')
-    alert('Danke für Ihren Auftrag')
+    sendEmail(name, email, adresse, land, cartItems[0])
+   // sendEmail(name,'Hallo , das ist ein test')
 
+    alert('Danke für Ihre Bestellung. Ihr Auftrag wird bearbeitet. Sie erhalten in kürze die Auftragsbestätigung')
+
+    
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal()
+    onclick, location.reload()
+    
 }
 
 function removeCartItem(event) {
@@ -82,7 +93,7 @@ function addToCartClicked(event) {
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc) {
+function addItemToCart(title, price) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]

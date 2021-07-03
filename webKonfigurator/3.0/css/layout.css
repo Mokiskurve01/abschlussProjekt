@@ -34,7 +34,7 @@ IE11
     min-height: 100vh;
     display: flex;
     flex-flow: column;
-    color: #33334c;
+    color: #333;
   }
 
   .container {
@@ -79,7 +79,7 @@ IE11
 
   #auswahl-stoffueberzug {
     background-color: transparent;
-    color: #33334c;
+    color: #333;
     grid-area: auswahl-stoffueberzug;
     margin: 0;
     padding: 1em;
@@ -87,7 +87,7 @@ IE11
 
   #auswahl-polsterung {
     background-color: transparent;
-    color: #33334c;
+    color: #333;
     grid-area: auswahl-polsterung;
     margin: 0;
     padding: 1em;
@@ -96,7 +96,7 @@ IE11
 
   #auswahl-metallteile {
     background-color: transparent;
-    color: #33334c;
+    color: #333;
     grid-area: auswahl-metallteile;
     margin: 0;
     padding: 1em;
@@ -106,7 +106,10 @@ IE11
     grid-area: model;
     margin: 1em 1em 2em 0;
     padding: 1em;
-    background-image:url("/webKonfigurator/3.0/assets/images/sonstiges/background-2.jpg");
+    min-width: 900px;
+    background-image:url("/webKonfigurator/3.0/assets/images/sonstiges/background-6.jpg");
+    background-size: 100%;
+    border-radius: 10px;
   
   }
 
