@@ -65,7 +65,7 @@
 
         
         //light pos
-        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, -2));
+        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, 0));
         light.diffuse = new BABYLON.Color3(1, 1, 1);
         light.specular = new BABYLON.Color3(1, 1, 1);
         light.groundColor = new BABYLON.Color3(1, 1, 1);
