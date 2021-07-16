@@ -1,88 +1,43 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      padding: 10px;
-      font-family: sans-serif;
-      font-size: 18px;
-      color: #fff;
-      background-color: #262E3D;
-    }
-  </style>
-  <script>
-    var formEl = document.getElementById('form');
-
-formEl.addEventListener('submit', function(event) {
-  // 1. Setup the request
-  // ================================
-  // 1.1 Headers
-  var headers = new Headers();
-  // Tell the server we want JSON back
-  headers.set('Accept', 'application/json');
-
-  // 1.2 Form Data
-  // We need to properly format the submitted fields.
-  // Here we will use the same format the browser submits POST forms.
-  // You could use a different format, depending on your server, such
-  // as JSON or XML.
-  var formData = new FormData();
-  for (var i = 0; i < formEl.length; ++i) {
-    formData.append(formEl[i].name, formEl[i].value);
-  }
-  
-  // This is for the purpose of this demo using jsFiddle AJAX Request endpoint
-  formData.append('json', JSON.stringify({example: 'return value'}));
-
-  // 2. Make the request
-  // ================================
-  var url = '/echo/json/';
-  var fetchOptions = {
-    method: 'POST',
-    headers,
-    body: formData
-  };
-  
-  var responsePromise = fetch(url, fetchOptions);
-  
-  // 3. Use the response
-  // ================================
-  responsePromise
-  	// 3.1 Convert the response into JSON-JS object.
-    .then(function(response) {
-      return response.json();
-    })
-    // 3.2 Do something with the JSON data
-    .then(function(jsonData) {
-    	console.log(jsonData);
-      document.getElementById('results').innerText =
-      	JSON.stringify(jsonData);
-    });
-  
-
-  event.preventDefault();
-});
-  </script>
+  <title>Spotify Web Playback SDK Quick Start Tutorial</title>
 </head>
-
 <body>
-  <form method="POST" action="" id="form">
-    <p>
-      Something: <input type="text" name="something" />
-    </p>
+  <h1>Spotify Web Playback SDK Quick Start Tutorial</h1>
+  <h2>Open your console log: <code>View > Developer > JavaScript Console</code></h2>
 
-    <p>
-      Whatever: <input type="checkbox" name="whatever" />
-    </p>
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script>
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      const token = '[My Spotify Web API access token]';
+      const player = new Spotify.Player({
+        name: 'Web Playback SDK Quick Start Player',
+        getOAuthToken: cb => { cb(token); }
+      });
 
-    <p>
-      <button type="submit">Submit</button>
-    </p>
-  </form>
+      // Error handling
+      player.addListener('initialization_error', ({ message }) => { console.error(message); });
+      player.addListener('authentication_error', ({ message }) => { console.error(message); });
+      player.addListener('account_error', ({ message }) => { console.error(message); });
+      player.addListener('playback_error', ({ message }) => { console.error(message); });
 
-  <div id="results"></div>
+      // Playback status updates
+      player.addListener('player_state_changed', state => { console.log(state); });
+
+      // Ready
+      player.addListener('ready', ({ device_id }) => {
+        console.log('Ready with Device ID', device_id);
+      });
+
+      // Not Ready
+      player.addListener('not_ready', ({ device_id }) => {
+        console.log('Device ID has gone offline', device_id);
+      });
+
+      // Connect to the player!
+      player.connect();
+    };
+  </script>
 </body>
-
 </html>

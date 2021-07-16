@@ -1,0 +1,114 @@
+
+  body {
+    background: linear-gradient(to bottom, #e7d5b2, #f1c572);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    color: #333;
+  }
+
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "auswahl-stoffueberzug model warenkorb"
+      "auswahl-metallteile model warenkorb"
+      "auswahl-polsterung model warenkorb"
+      "kauf-btn model warenkorb";
+    grid-gap: 0.2rem;
+    justify-content:center;
+  }
+
+  .container img {
+    border-radius: 5px;
+  }
+  .auswahl-btn {
+    width: 180px;
+    height: 100px;
+  }
+
+  #auswahl-stoffueberzug {
+    grid-area: auswahl-stoffueberzug;
+    background-color: transparent;
+    color: #333;
+  }
+
+  #auswahl-polsterung {
+    background-color: transparent;
+    color: #333;
+    grid-area: auswahl-polsterung;
+    
+  }
+
+
+  #auswahl-metallteile {
+    background-color: transparent;
+    color: #333;
+    grid-area: auswahl-metallteile;
+    
+  }
+
+  #model {
+    grid-area: model;
+    background-image:url("/webKonfigurator/3.0/assets/images/sonstiges/background-6.jpg");
+    background-size: 100%;
+    border-radius: 10px;
+  
+  }
+
+  #warenkorb {
+    background-color: transparent;
+    grid-area: warenkorb;
+    text-align: center;
+    border-style: dashed;
+    border-radius: 10px;
+  }
+
+  #kauf-btn {
+    background: none;
+    font-size: 2rem;
+    font-family: "montserrat";
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    border: 5px solid red;
+  }
+
+  .btn1 {
+    color: #e21010;
+  }
+
+  .btn1:hover {
+    color: black;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #a27624;
+    z-index: -1;
+    transition: 0.8s;
+  }
+
+  .btn1::before {
+    top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+
+  .btn1:hover::before {
+    height: 180%;
+  }
+
+  #renderCanvas {
+   width: 100%;  }
