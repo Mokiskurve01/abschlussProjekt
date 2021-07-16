@@ -104,7 +104,7 @@ IE11
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
-    border: 5px solid black;
+    border: 5px solid #a27624;
   }
 
   #auswahl-polsterung {
@@ -121,7 +121,7 @@ IE11
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
-    border: 5px solid black;
+    border: 5px solid #a27624;
   }
 
 
@@ -139,7 +139,7 @@ IE11
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
-    border: 5px solid black;
+    border: 5px solid #a27624;
   }
 
   #model {
@@ -149,7 +149,6 @@ IE11
     background-image:url("../assets/images/sonstiges/background-6.jpg ");
     background-size: 100%;
     border-radius: 10px;
-  
   }
 
   #warenkorb {
@@ -158,6 +157,7 @@ IE11
     text-align: center;
     margin: 2em;
     border-style: dashed;
+    border-color: #a27624;
     padding: 1em;
     border-radius: 10px;
   }
