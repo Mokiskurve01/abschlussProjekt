@@ -31,7 +31,6 @@ IE11
   body {
     background: linear-gradient(to bottom, #e7d5b2, #f1c572);
     margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-flow: column;
     color: #333;
@@ -51,18 +50,19 @@ IE11
       "kauf-btn model warenkorb";
     grid-gap: 0.2rem;
   }
+
   @media only screen and (max-width: 1100px) {
     .container {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 2fr 0.5fr 0.5fr;
       grid-template-areas:
         "model model model model"
-        "auswahl-stoffueberzug auswahl-metallteile auswahl-polsterung kauf-btn"     
+        "auswahl-stoffueberzug auswahl-metallteile auswahl-polsterung kauf-btn"
         "warenkorb warenkorb warenkorb warenkorb"
-        ;
+      ;
     }
   }
-  
+
 
   .container-ueber-uns {
     margin: 1rem;
@@ -99,12 +99,31 @@ IE11
     padding: 0.2em;
     font-size: 2rem;
     font-family: "montserrat";
-    margin: 0.5em 1em 2em 0;
+    margin: 1em 0 0.5em 0.5em;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
     border: 5px solid #a27624;
+    box-shadow: 5px 10px #888888;
+  }
+
+  #auswahl-metallteile {
+    width: 180px;
+    height: 100px;
+    background-color: transparent;
+    color: #333;
+    grid-area: auswahl-metallteile;
+    padding: 0.2em;
+    font-size: 2rem;
+    font-family: "montserrat";
+    margin: 1em 0 0.5em 0.5em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    border: 5px solid #a27624;
+    box-shadow: 5px 10px #888888;
   }
 
   #auswahl-polsterung {
@@ -116,50 +135,13 @@ IE11
     padding: 0.2em;
     font-size: 2rem;
     font-family: "montserrat";
-    margin: 0.5em 1em 2em 0;
+    margin:1em 0 0.5em 0.5em;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
     border: 5px solid #a27624;
-  }
-
-
-  #auswahl-metallteile {
-    width: 180px;
-    height: 100px;
-    background-color: transparent;
-    color: #333;
-    grid-area: auswahl-metallteile;
-    padding: 0.2em;
-    font-size: 2rem;
-    font-family: "montserrat";
-    margin: 0.5em 1em 2em 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    text-align: center;
-    border: 5px solid #a27624;
-  }
-
-  #model {
-    grid-area: model;
-    margin: 1em;
-    padding: 1em;
-    background-image:url("../assets/images/sonstiges/background-6.jpg ");
-    background-size: 100%;
-    border-radius: 10px;
-  }
-
-  #warenkorb {
-    background-color: transparent;
-    grid-area: warenkorb;
-    text-align: center;
-    margin: 2em;
-    border-style: dashed;
-    border-color: #a27624;
-    padding: 1em;
-    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
   }
 
   #kauf-btn {
@@ -170,14 +152,38 @@ IE11
     font-size: 2rem;
     font-family: "montserrat";
     cursor: pointer;
-    margin: 0.5em 1em 2em 0;
+    margin: 1em 0 0.5em 0.5em;
     transition: 0.8s;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     text-align: center;
     border: 5px solid red;
+    box-shadow: 5px 10px #888888;
   }
+
+  #model {
+    grid-area: model;
+    margin: 1em;
+    padding: 1em;
+    background-image: url("../assets/images/sonstiges/background-6.jpg ");
+    background-size: 100%;
+    border-radius: 10px;
+
+  }
+
+  #warenkorb {
+    background-color: transparent;
+    grid-area: warenkorb;
+    text-align: center;
+    margin: 1em;
+    border-style: dashed;
+    border-color: #a27624;
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+
 
   .btn1 {
     color: #e21010;

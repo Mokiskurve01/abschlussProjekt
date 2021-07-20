@@ -29,6 +29,8 @@
                         assets/logo/logo-horsenate-720-99.gif 3x" alt="Logo von Horsenate" width="100%" height="100%">
       </h1>
     </div>
+
+
   </header>
 
 
@@ -58,7 +60,6 @@
         <h2>Kontakt</h2>
 
         <p>Fragen? Anregungen? Auf dieser Seite finden Sie Möglichkeiten, mit uns in Kontakt zu treten.</p>
-
       </section>
 
       <section class="kontaktdaten">
@@ -82,58 +83,57 @@
 
       </section>
 
-
       <section class="kontaktformular-abschnitt">
-
+        
         <h3 class="visually-hidden">Kontaktformular</h3>
 
         <p>Mit dem folgenden Formular können Sie uns eine Nachricht senden.</p>
 
-        <form class="kontaktformular" action='http://www.dognate.net/ajax-email.php' method="post">
+          <form  class="kontaktformular" action="https://formspree.io/f/mnqlzypl" method="POST" id="my-form">
 
-          <div>
-            <label for="besuchername">Ihr Name: </label>
-            <input type="text" id="besuchername" name="besuchername">
-          </div>
+            <div class="form-group">
+              <label for="firstName"> Vorname</label>
+              <input type="text" id="firstName" name="firstName">
+            </div>
 
-          <div>
-            <label for="besuchermail">Ihre E-Mail: </label>
-            <input type="email" id="besuchermail" name="besuchermail">
-          </div>
+            <div class="form-group">
+              <label for="lastName"> Nachname</label>
+              <input type="text" id="lastName" name="lastName">
+            </div>
 
-          <div>
-            <label for="nachricht">Ihre Nachricht: </label>
-            <textarea id="nachricht" name="nachricht" cols="20" rows="5"></textarea>
-          </div>
+            <div class="form-group">
+              <label for="email"> Email</label>
+              <input type="email" id="email" name="email">
+            </div>
 
-          <div>
-            <button type="submit">Abschicken</button>
-          </div>
-
-        </form>
-
+            <div class="form-group">
+              <label for="massage">Nachricht</label>
+              <textarea name="massage" id="massage" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+              <button type="submit">Senden</button>
+            </div>
+          </form>
+        </div>
+        <div id="status"></div>
       </section>
-
+      <script src="kontakt.js"></script>
+    </div>
     </div>
   </main>
 
-
   <footer class="site-footer">
     <div class="wrapper">
-
       <nav class="meta-nav">
-
         <ul class="meta-nav-list">
           <li><a href="http://www.dognate-impressum.net/#Impressum/Datenschutz">Impressum</a></li>
           <li><a href="http://www.dognate-impressum.net/#Impressum/Datenschutz">Datenschutz</a></li>
           <li><a href="#top">Nach oben</a></li>
         </ul>
-
       </nav>
-
     </div>
   </footer>
-
+  <script src="js/kontakt.js"></script>
 </body>
 
 </html>

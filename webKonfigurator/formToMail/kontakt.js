@@ -5,12 +5,12 @@ window.addEventListener("DOMContentLoaded", function (){
     function success() {
         form.reset ();
         status.classList.add('success');
-        status.innerHTML = "Thanks!";
+        status.innerHTML = "Danke für Ihre Nachricht!";
     }
 
     function error() {
         status.classList.add('error');
-        status.innerHTML ="Oops! There was a problem";
+        status.innerHTML ="Oops! Das hat leider nicht geklappt!";
     }
 
     form.addEventListener("submit", function (ev){

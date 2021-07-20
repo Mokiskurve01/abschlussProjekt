@@ -33,8 +33,8 @@
                 okt.diffuseTexture = new BABYLON.Texture("assets/images/stoffueberzug/okt.jpg", scene);
                 ozelot = new BABYLON.StandardMaterial("ozelot", scene);
                 ozelot.diffuseTexture = new BABYLON.Texture("assets/images/stoffueberzug/ozelot.jpg", scene);
-                rinde = new BABYLON.StandardMaterial("rinde", scene);
-                rinde.diffuseTexture = new BABYLON.Texture("assets/images/stoffueberzug/rinde.jpg", scene);
+                baumrinde = new BABYLON.StandardMaterial("baumrinde", scene);
+                baumrinde.diffuseTexture = new BABYLON.Texture("assets/images/stoffueberzug/baumrinde.png", scene);
                 jeans = new BABYLON.StandardMaterial("jeans", scene);
                 jeans.diffuseTexture = new BABYLON.Texture("assets/images/stoffueberzug/jeans.jpg", scene);
                 rosa = new BABYLON.StandardMaterial("rosa", scene);
@@ -116,8 +116,8 @@
             case "Ozelot":
                 stoffueberzug.material = ozelot;
                 break;
-            case "Rinde":
-                stoffueberzug.material = rinde;
+            case "Baumrinde":
+                stoffueberzug.material = baumrinde;
                 break;
             case "Jeans":
                     stoffueberzug.material = jeans;
