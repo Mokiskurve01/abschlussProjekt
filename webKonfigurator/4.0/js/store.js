@@ -21,7 +21,7 @@ function ready() {
     var addToCartButtons = document.getElementsByClassName('shop-item-button')
     for (var i = 0; i < addToCartButtons.length; i++) {
         var button = addToCartButtons[i]
-        //hier check auswahl geroffen
+        //hier check auswahl getroffen
         button.addEventListener('click', addToCartClicked)
     }
 
