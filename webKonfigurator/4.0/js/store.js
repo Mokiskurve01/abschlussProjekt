@@ -46,7 +46,6 @@ function sendEmail(name, email, adresse, land, cartItems, total) {
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
         body: `name=${encodeURI(name)}&email=${encodeURI(email)}&message=${encodeURI(message)}`
-        //body: 'hallo dies ist ein test'
     })
 }
 
