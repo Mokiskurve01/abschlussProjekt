@@ -61,9 +61,15 @@ function purchaseClicked() {
     const adresse = document.getElementById('kontakt-Adresse').value;
     const land = document.getElementById('kontakt-Land').value;
     var cartItems = loadCartItems();
+
+    
+    
+if(cartItems) { console.log("Not null") } else { console.log("Could be null") } // Could be null
+
+
+
+
     sendEmail(name, email, adresse, land, cartItems, total)
-
-
     alert('Danke für Ihre Bestellung. Ihr Auftrag wird bearbeitet. Sie erhalten in kürze die Auftragsbestätigung')
     onclick, location.reload()
 
@@ -123,6 +129,8 @@ function addItemToCart(title, price) {
             return
         }
     }
+   
+
     var cartRowContents = `
         <div class="cart-item cart-column">
             <span class="cart-item-title">${title}</span>

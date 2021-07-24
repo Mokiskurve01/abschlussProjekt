@@ -68,11 +68,12 @@ IE11
     margin: 1rem;
     padding: 1rem;
     display: grid;
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.2fr 1fr;
+    grid-template-columns: 0,2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-      "renate-box renate-text-box"
-      "alex-box alex-text-box";
+      "renate-bild-box renate-text-box"
+      "alex-bild-box alex-text-box"
+      "leroyTerry-box leroyTerry-text-box";
     grid-gap: 0.2rem;
   }
 
@@ -85,6 +86,12 @@ IE11
     font-size: 1.2em;
     margin: 0 0 0 1em;
   }
+
+  #leroyTerry-text-box {
+    font-size: 1.2em;
+    margin: 0 0 0 1em;
+  }
+
 
   .container img {
     border-radius: 5px;
