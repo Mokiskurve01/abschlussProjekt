@@ -115,6 +115,18 @@
         <input type="text" placeholder="E-mail" id="kontakt-Email">
         <input type="text" placeholder="Adresse" id="kontakt-Adresse">
         <input type="text" placeholder="Land" id="kontakt-Land">
+
+        <div id="auswahl-groesse">
+          <label for="Pferdegroesse">Pferdegroesse:</label>
+          <select name="auswahlGroesse" onchange=waehleGroesse() id="groesse">
+            <option disabled selected value> -- AUSWAHL -- </option>
+            <option value="Pony">Pony</option>
+            <option value="Cob/Vollblut">Cob/Vollblut</option>
+            <option value="Warmblut">Warmblut</option>
+            <option value="Kaltblut">Kaltblut</option>
+          </select>
+        </div>
+
         <button class="btn btn-primary btn-purchase" type="button">Senden</button>
       </div>
 
