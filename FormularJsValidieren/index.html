@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let formtitel = document.getElementsByName('formtitel')[0];
+        formtitel.onchange = function () {
+            if (formtitel.selectedIndex == 0) {
+                this.setAttribute('style', 'background:seashell');
+                document.querySelector('.msg.formtitel').innerHTML = 'Bitte wählen Sie den Buchtitel!';
+                document.querySelector('.msg.formtitel').setAttribute('style', 'display:block');
+                errortitel = true;
+            } else {
+                this.setAttribute('style', 'background: white');
+                document.querySelector('.msg.formtitel').innerHTML = '';
+                document.querySelector('.msg.formtitel').setAttribute('style', 'display:none');
+                errortitel = false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label><span>Buchtitel</span>
+        <select name="fieldtitel">
+            <option>–– Buchtitel wählen ––</option>
+            <option value="n417">Eine Geschichte von fast allem</option>
+            <option value="n418">Das Heideprinzesschen</option>
+            <option value="n419">Lecture Notes on Physics</option>
+        </select>
+    </label>
+</body>
+
+</html>
