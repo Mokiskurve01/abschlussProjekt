@@ -44,6 +44,10 @@ basis.css
     margin-top: 0;
     margin-bottom: 1rem;
   }
+  h1 img {
+    width: 80%; 
+    height: 80%;
+  }
 
   /* Elemente im visuellen Layout versteckt, aber für Screenreader vorhanden */ 
   .visually-hidden {
