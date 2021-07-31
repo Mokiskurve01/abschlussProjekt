@@ -34,7 +34,7 @@ function sendEmail(name, email, adresse, land, cartItems, total, groesse) {
     ${'E-mail : ' + email}
     ${'Adresse : ' + adresse}
     ${'Land : ' + land}
-    ${'Material : ' + cartItems}
+    ${'Material : 1.Stoffüberzug 2.Metallteile 3.Polsterung' + cartItems}
     ${'Gesamt Preis : ' + total+' Euro'}
     ${'Pferde groesse : ' + groesse}`;
     fetch('http://www.dognate.net/ajax-email.php', {
@@ -105,9 +105,9 @@ function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
     let auswahlStoff = document.getElementById("stoffueberzug").value;
-    let auswahlPolster = document.getElementById("polsterung").value;
     let auswahlMetall = document.getElementById("metallteile").value;
-    let title = auswahlStoff + " " + auswahlPolster + " " + auswahlMetall;
+    let auswahlPolster = document.getElementById("polsterung").value;
+    let title = auswahlStoff + " " + auswahlMetall + " " + auswahlPolster ;
     var price = shopItem.getElementsByClassName('artikel-preis')[0].innerText
 
     addItemToCart(title, price)
