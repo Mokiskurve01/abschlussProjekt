@@ -59,7 +59,7 @@
     <div class="container">
       <div id="auswahl-stoffueberzug">
         <label for="Material">Stoffueberzug:</label>
-        <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug">
+        <select name="auswahlMaterial" onchange=waehleStoffueberzug() id="stoffueberzug" required>
           <option disabled selected value> -- AUSWAHL -- </option>
           <option value="baumrinde">Baumrinde</option>
           <option value="candy">Candy</option>
@@ -77,7 +77,7 @@
       </div>
       <div id="auswahl-metallteile">
         <label for="Material">Metallteile:</label>
-        <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile">
+        <select name="auswahlMaterial" onchange=waehleMetallteile() id="metallteile" required>
           <option disabled selected value> -- AUSWAHL -- </option>
           <option value="gold">Gold</option>
           <option value="silber">Silber</option>
@@ -85,7 +85,7 @@
       </div>
       <div id="auswahl-polsterung">
         <label for="Material">Polsterung:</label>
-        <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung">
+        <select name="auswahlMaterial" onchange=waehlePolsterung() id="polsterung" required>
           <option disabled selected value> -- AUSWAHL -- </option>
           <option value="fellimitatOzelot">Fellimitat Ozelot</option>
           <option value="fellimitatZebra">Fellimitat Zebra</option>
@@ -122,7 +122,6 @@
           <input type="email" placeholder="E-mail" id="kontakt-Email">
           <input type="text" placeholder="Adresse" id="kontakt-Adresse">
           <input type="text" placeholder="Land" id="kontakt-Land">
-       
 
         <div id="auswahl-groesse">
           <label for="Pferdegroesse">Pferdegroesse:</label>

@@ -4,6 +4,7 @@ if (document.readyState == 'loading') {
     ready()
 }
 let total = 0
+
 function ready() {
     //warenkorbartikel löschen
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
@@ -21,7 +22,6 @@ function ready() {
     var addToCartButtons = document.getElementsByClassName('shop-item-button')
     for (var i = 0; i < addToCartButtons.length; i++) {
         var button = addToCartButtons[i]
-        //hier prüfen ob alle drei auswahl getroffen wurden
         button.addEventListener('click', addToCartClicked)
     }
 
@@ -37,6 +37,7 @@ function sendEmail(name, email, adresse, land, cartItems, total, groesse) {
     ${'Material : 1.Stoffüberzug 2.Metallteile 3.Polsterung' + cartItems}
     ${'Gesamt Preis : ' + total+' Euro'}
     ${'Pferde groesse : ' + groesse}`;
+    //send email to dognate.net
     fetch('http://www.dognate.net/ajax-email.php', {
         method: 'POST',
         mode: 'cors', // no-cors, *cors, same-origin
@@ -52,10 +53,21 @@ function sendEmail(name, email, adresse, land, cartItems, total, groesse) {
 }
 
 function loadCartItems() {
-
     return window.sessionStorage.getItem('cart');
 }
-//Kasse
+//check email
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+//reset kontaktDaten
+function resetPurchaseForm() {
+    document.getElementById('kontakt-Name').value = null;
+    document.getElementById('kontakt-Email').value = null;
+    document.getElementById('kontakt-Adresse').value = null;
+    document.getElementById('kontakt-Land').value = null;
+}
+
 function purchaseClicked() {
     const name = document.getElementById('kontakt-Name').value;
     const email = document.getElementById('kontakt-Email').value;
@@ -63,18 +75,18 @@ function purchaseClicked() {
     const land = document.getElementById('kontakt-Land').value;
     var cartItems = loadCartItems();
     const groesse = document.getElementById('groesse').value;
-    sendEmail(name, email, adresse, land, cartItems, total, groesse)
 
-
-    alert('Danke für Ihre Bestellung. Ihr Auftrag wird bearbeitet. Sie erhalten in kürze die Auftragsbestätigung')
-    onclick, location.reload()
-
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
+    if (validateEmail(email)) {
+        sendEmail(name, email, adresse, land, cartItems, total, groesse)
+        alert('Danke für Ihre Bestellung. Ihr Auftrag wird bearbeitet. Sie erhalten in kürze die Auftragsbestätigung')
+        resetPurchaseForm();
+        while (cartItems.hasChildNodes()) {
+            cartItems.removeChild(cartItems.firstChild)
+        }
+        updateCartTotal()
+    } else {
+        alert('Ungültige E-Mail!')
     }
-    updateCartTotal()
-    
-
 }
 
 function removeCartItem(buttonClicked, title) {
@@ -84,9 +96,9 @@ function removeCartItem(buttonClicked, title) {
     if (cart) {
         const index = cart.indexOf(title);
         if (index > -1) {
-          cart.splice(index, 1);
+            cart.splice(index, 1);
         }
-    } 
+    }
     window.sessionStorage.setItem('cart', JSON.stringify(cart));
 
     updateCartTotal()
@@ -107,11 +119,15 @@ function addToCartClicked(event) {
     let auswahlStoff = document.getElementById("stoffueberzug").value;
     let auswahlMetall = document.getElementById("metallteile").value;
     let auswahlPolster = document.getElementById("polsterung").value;
-    let title = auswahlStoff + " " + auswahlMetall + " " + auswahlPolster ;
+    let title = auswahlStoff + " " + auswahlMetall + " " + auswahlPolster;
     var price = shopItem.getElementsByClassName('artikel-preis')[0].innerText
-
-    addItemToCart(title, price)
-    updateCartTotal()
+    //check material ausgewaehlt
+    if (auswahlStoff && auswahlMetall && auswahlPolster) {
+        addItemToCart(title, price)
+        updateCartTotal()
+    } else {
+        alert('Bitte wählen Sie drei Materialien aus!')
+    }
 }
 
 function addItemToCart(title, price) {
@@ -142,8 +158,8 @@ function addItemToCart(title, price) {
     let cart = JSON.parse(window.sessionStorage.getItem('cart'));
     if (cart) {
         cart.push(title);
-    } else{
-        cart=[title];
+    } else {
+        cart = [title];
     }
     window.sessionStorage.setItem('cart', JSON.stringify(cart));
 }
